@@ -7,26 +7,24 @@ public class Jelo {
     private String name;
     private float rating;
     private String description;
-    private String category;
-    private String ingridients;
     private String calory;
     private double price;
-    private Category category2;
+    private Category category2; // broj 2 je dodan zato sto sam koristio ovaj naziv u Example14
+    private Ingridients ingridients2; // broj 2 je dodan zato sto sam koristio ovaj naziv u Example14
 
     public Jelo() {
     }
 
-    public Jelo(int id, String image, String name, float rating, String description, String category, String ingridients, String calory, double price, Category category2) {
+    public Jelo(int id, String image, String name, float rating, String description, Category category2, Ingridients ingridients2, String calory, double price) {
         this.id = id;
         this.image = image;
         this.name = name;
         this.rating = rating;
         this.description = description;
-        this.category = category;
-        this.ingridients = ingridients;
+        this.category2 = category2;
+        this.ingridients2 = ingridients2;
         this.calory = calory;
         this.price = price;
-        this.category2 = category2;
     }
 
     public int getId() {
@@ -69,21 +67,6 @@ public class Jelo {
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getIngridients() {
-        return ingridients;
-    }
-
-    public void setIngridients(String ingridients) {
-        this.ingridients = ingridients;
-    }
 
     public String getCalory() {
         return calory;
@@ -107,6 +90,14 @@ public class Jelo {
 
     public void setCategory2(Category category2) {
         this.category2 = category2;
+    }
+
+    public Ingridients getIngridients2() {
+        return ingridients2;
+    }
+
+    public void setIngridients2(Ingridients ingridients2) {
+        this.ingridients2 = ingridients2;
     }
 
     @Override

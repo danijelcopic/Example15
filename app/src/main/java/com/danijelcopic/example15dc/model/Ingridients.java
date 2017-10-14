@@ -1,20 +1,19 @@
 package com.danijelcopic.example15dc.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Category {
+public class Ingridients {
 
     private int id;
     private String name;
     private List<Jelo> jela;
 
-    public Category() {
+    public Ingridients() {
         this.jela = new ArrayList<>();
     }
 
-    public Category(int id, String name) {
+    public Ingridients(int id, String name) {
         this.id = id;
         this.name = name;
         this.jela = new ArrayList<>();
@@ -61,5 +60,4 @@ public class Category {
 
         return jela.get(position);
     }
-
 }

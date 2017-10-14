@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,13 +16,13 @@ import android.widget.Toast;
 
 import com.danijelcopic.example15dc.R;
 import com.danijelcopic.example15dc.provider.CategoryProvider;
+import com.danijelcopic.example15dc.provider.IngridientsProvider;
 import com.danijelcopic.example15dc.provider.JeloProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import static java.lang.String.valueOf;
 
 public class SecondActivity extends Activity {
 
@@ -64,16 +65,23 @@ public class SecondActivity extends Activity {
         List<String> categories = CategoryProvider.getCategoryNames();
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
         category.setAdapter(adapter);
-        category.setSelection((int)JeloProvider.getJeloById(position).getCategory2().getId());
+        category.setSelection((int) JeloProvider.getJeloById(position).getCategory2().getId());
 
 
-//        // jelo grupa
+        // jelo grupa
 //        TextView jeloGrupa = (TextView) findViewById(R.id.tv_category_des);
 //        jeloGrupa.setText(JeloProvider.getJeloById(position).getCategory());
 
         // jelo sastojci ... treba izmeniti i dodati ListView
-        TextView jeloSastojci = (TextView) findViewById(R.id.tv_ingridients_des);
-        jeloSastojci.setText(JeloProvider.getJeloById(position).getIngridients());
+//        TextView jeloSastojci = (TextView) findViewById(R.id.tv_ingridients_des);
+//        jeloSastojci.setText(JeloProvider.getJeloById(position).getIngridients());
+
+        ListView listView = (ListView) findViewById(R.id.lv_list_view);
+        List<String> list = IngridientsProvider.getIngridientsNames();
+        ArrayAdapter<String> adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+        listView.setAdapter(adapter2);
+        listView.setSelection((int) JeloProvider.getJeloById(position).getIngridients2().getId());
+
 
         // jelo kalorije
         TextView jeloKalorije = (TextView) findViewById(R.id.tv_calorie_des);
