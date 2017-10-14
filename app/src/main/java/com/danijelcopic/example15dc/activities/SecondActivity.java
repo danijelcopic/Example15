@@ -71,7 +71,7 @@ public class SecondActivity extends Activity {
 //        TextView jeloGrupa = (TextView) findViewById(R.id.tv_category_des);
 //        jeloGrupa.setText(JeloProvider.getJeloById(position).getCategory());
 
-        // jelo sastojci
+        // jelo sastojci ... treba izmeniti i dodati ListView
         TextView jeloSastojci = (TextView) findViewById(R.id.tv_ingridients_des);
         jeloSastojci.setText(JeloProvider.getJeloById(position).getIngridients());
 
